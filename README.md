@@ -1,4 +1,4 @@
-To use composer in order to install this plugin on laravel 5.2, add this line to require array of composer.json:
+To use composer in order to install this plugin on laravel 5.2, add this line to require object of composer.json:
 
     "willypuzzle/happybirthday": "dev-master"
 
