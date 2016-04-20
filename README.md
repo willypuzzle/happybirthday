@@ -1,4 +1,4 @@
-At the moment it needs some handed coded instructions in order that all works properly:
+At the moment it needs some hand coded instructions in order that all works properly:
 
 1)Add Willypuzzle\Happybirthday\Traits\HappybirthdayUserTrait to User eloquent model class.
 
