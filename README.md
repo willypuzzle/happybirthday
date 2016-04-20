@@ -1,3 +1,7 @@
+To use composer in order to install this plugin on laravel 5.2, add this line to require array of composer.json:
+
+    "willypuzzle/happybirthday": "dev-master"
+
 At the moment it needs some hand coded instructions in order that all works properly:
 
 1)Add Willypuzzle\Happybirthday\Traits\HappybirthdayUserTrait to User eloquent model class.
