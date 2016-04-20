@@ -10,8 +10,6 @@ class AddBirthdayToUsersTable extends Migration
 
     public function __construct()
     {
-        parent::__construct();
-
         $this->table = config('happybirthday.database.table.name');
         $this->field = config('happybirthday.database.table.field');
     }

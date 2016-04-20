@@ -3,6 +3,8 @@
 namespace Willypuzzle\Happybirthday;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\App;
+use Willypuzzle\Happybirthday\Providers\Main;
 
 class HappybirthdayServiceProvider extends ServiceProvider
 {
@@ -14,15 +16,15 @@ class HappybirthdayServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        $this->publishes([
-            __DIR__.'/config/happybirthday.php' => config_path('happybirthday.php'),
-            'config'
-        ]);
 
         $this->publishes([
-            __DIR__.'database' => database_path('/'),
-            'database'
-        ]);
+            __DIR__.'/config/happybirthday.php' => config_path('happybirthday.php')
+        ], 'config');
+
+
+        $this->publishes([
+            __DIR__.'/database' => database_path('/')
+        ], 'database');
     }
 
     /**
@@ -33,7 +35,7 @@ class HappybirthdayServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        require_once(__DIR__.'/Providers/Main.php');
+        //require_once(__DIR__.'/Providers/Main.php');
 
         App::singleton('Happybirthday', function($app)
         {
