@@ -24,6 +24,9 @@ class Main
         return $user->hasBirthdayNow();
     }
 
+    /**
+     * @param $date string This string has to be in every format recognized by Carbon::parse()
+     */
     public function testBirthdayOfLoggedUser($date, $guard = null){
         $user = auth($guard)->user();
 
