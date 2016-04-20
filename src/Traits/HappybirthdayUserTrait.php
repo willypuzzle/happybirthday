@@ -16,25 +16,17 @@ trait HappybirthdayUserTrait {
         $birthdayDate = Carbon::parse($this->$field);
         $inputDate = Carbon::parse($date);
 
-        if(29 != $birthdayDate->day && 2 != $birthdayDate->month){
+        if( !(29 == $birthdayDate->day && 2 == $birthdayDate->month) || (0 == $inputDate->year % 4) || 'every4years' == config('happybirthday.leapday')){
             return ($birthdayDate->day == $inputDate->day) && ($birthdayDate->month == $inputDate->month);
         }else{
-            if('every4years' != config('happybirthday.leapday')){
-                if ('1march' == config('happybirthday.leapday')) {
-                    $leapDay = 1;
-                    $leapMonth = 3;
-                }else{
-                    $leapDay = 28;
-                    $leapMonth = 2;
-                }
-                if ($leapDay == $inputDate->day && $leapMonth == $inputDate->month && (0 != $inputDate->year % 4)) {
-                    return true;
-                } else {
-                    return false;
-                }
+            if ('1march' == config('happybirthday.leapday')) {
+                $leapDay = 1;
+                $leapMonth = 3;
             }else{
-                return ($birthdayDate->day == $inputDate->day) && ($birthdayDate->month == $inputDate->month);
+                $leapDay = 28;
+                $leapMonth = 2;
             }
+            return ($leapDay == $inputDate->day) && ($leapMonth == $inputDate->month);
         }
     }
 

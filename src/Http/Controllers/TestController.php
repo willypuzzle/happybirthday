@@ -16,6 +16,6 @@ class TestController extends Controller
     }
 
     public function date($date){
-        
+        return Happybirthday::testBirthdayOfLoggedUser($date) ? "Birthday" : "Not Birthday";
     }
 }
