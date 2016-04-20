@@ -1,10 +1,10 @@
-At the moment it needs some instructions handed coded in order that all works properly:
+At the moment it needs some handed coded instructions in order that all works properly:
 
 1)Add Willypuzzle\Happybirthday\Traits\HappybirthdayUserTrait to User eloquent model class.
 
  For example:
 
- use Willypuzzle\Happybirthday\Traits\HappybirthdayUserTrait;
+    use Willypuzzle\Happybirthday\Traits\HappybirthdayUserTrait;
 
     class User extends Authenticatable
     {
