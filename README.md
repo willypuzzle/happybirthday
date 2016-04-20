@@ -6,12 +6,12 @@ At the moment it needs some instructions handed coded in order that all works pr
 
  use Willypuzzle\Happybirthday\Traits\HappybirthdayUserTrait;
 
- class User extends Authenticatable
- {
-     use HappybirthdayUserTrait;
+    class User extends Authenticatable
+    {
+        use HappybirthdayUserTrait;
 
-     ....
- }
+        ....
+    }
 
 2)Insert this instruction inside the default constructor of User eloquent model class, before parent constructor calling:
 
@@ -19,20 +19,20 @@ At the moment it needs some instructions handed coded in order that all works pr
 
  For example:
 
- class User extends Authenticatable
- {
+    class User extends Authenticatable
+    {
 
-     ...
+         ...
 
-     public function __construct()
-     {
-         $this->table = config('happybirthday.database.table.name');
+        public function __construct()
+        {
+             $this->table = config('happybirthday.database.table.name');
 
-         parent::__construct();
-     }
+             parent::__construct();
+        }
 
-     ...
- }
+        ...
+    }
 
  After you have to do all is usual with a laravel plugin:
 
